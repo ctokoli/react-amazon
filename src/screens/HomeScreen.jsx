@@ -1,12 +1,23 @@
 import React from 'react';
+import ProductCard from "components/templates/cards";
+import data from "data";
 
 
 function HomeScreen() {
     return ( 
         <div>
-            <h2>
-                Home Screen
-            </h2>
+             <div className="row center">
+        {data.products.map((product) => (
+          <ProductCard
+            id={product._id}
+            image={product.image}
+            name={product.name}
+            price={product.price}
+            rating={product.rating}
+            numReviews={product.reviews}
+          />
+        ))}
+      </div>
         </div>
      );
 }
