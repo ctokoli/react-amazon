@@ -9,7 +9,8 @@ const data = {
             brand: "Nike",
             rating: 4.5,
             reviews: 10,
-            discription: "Nice high quality Nike shirt"
+            discription: "Nice high quality Nike shirt",
+            stock: 10
         },
         {
             _id: '2',
@@ -20,7 +21,8 @@ const data = {
             brand: "Adidas",
             rating: 4.0,
             reviews: 9,
-            discription: "Nice quality slim fit Shirt"
+            discription: "Nice quality slim fit Shirt",
+            stock: 0
         },
         {
             _id: '3',
@@ -31,7 +33,8 @@ const data = {
             brand: "Lacoste",
             rating: 4.5,
             reviews: 10,
-            discription: "Nice high quality Lacoste shirt"
+            discription: "Nice high quality Lacoste shirt",
+            stock: 9
         },
         {
             _id: '4',
@@ -42,7 +45,8 @@ const data = {
             brand: "Puma",
             rating: 3.5,
             reviews: 8,
-            discription: "Nice high quality puma shirt"
+            discription: "Nice high quality puma shirt",
+            stock: 15
         },
         {
             _id: '5',
@@ -53,7 +57,8 @@ const data = {
             brand: "Timberlake",
             rating: 4.5,
             reviews: 7,
-            discription: "Timberlake shirt"
+            discription: "Timberlake shirt",
+            stock: 8
         }
     ]
 }

@@ -5,6 +5,9 @@ import { faStarHalfAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
+/**
+ * @param {{ rating: any; numReviews: any; }} props
+ */
 export default function Rating(props){
     const {rating, numReviews} = props;
     return(
