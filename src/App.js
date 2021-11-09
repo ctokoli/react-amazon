@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import ProductCard from './components/templates/cards';
 import data from './data';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 
 function App() {
   return (
