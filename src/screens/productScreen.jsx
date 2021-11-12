@@ -4,7 +4,7 @@ import React from "react";
 
 function ProductScreen(props) {
   const product = data.products.find(
-    (x) => x._id === this.props.match.params.id
+    (x) => x._id === props.match.params.id
   );
 
   if (!product) {
@@ -18,7 +18,7 @@ function ProductScreen(props) {
     <div>
       <div className="row">
         <div className="col-2">
-          <img className="large" src={product.image} alt={product.name}></img>
+          <img className="large" src={process.env.PUBLIC_URL + '.' + product.image} alt={product.name}></img>
         </div>
         <div className="col-1">
           <ul>
