@@ -1,6 +1,7 @@
 import Rating from "components/templates/star_comp";
 import data from "data";
 import React from "react";
+import { Link } from "react-router-dom";
 
 function ProductScreen(props) {
   const product = data.products.find(
@@ -16,18 +17,22 @@ function ProductScreen(props) {
   }
   return (
     <div>
-      <div className="row">
+      <Link to="/">Back to home</Link>
+      <div className="row top">
         <div className="col-2">
           <img className="large" src={process.env.PUBLIC_URL + '.' + product.image} alt={product.name}></img>
         </div>
         <div className="col-1">
           <ul>
             <li>{product.name}</li>
-            <li>
-              <Rating
+            <li >
+              <div className="rating">
+              <Rating 
                 rating={product.rating}
                 numReviews={product.reviews}
               ></Rating>
+              </div>
+              
             </li>
             <li>Price : ${product.price}</li>
             <li>

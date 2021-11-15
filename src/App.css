@@ -78,6 +78,10 @@ footer{
   justify-content: center;  
 }
 
+.row.top{
+  align-items: flex-start;
+}
+
 /* product image */
 img {
   border-radius: 0.5rem;
