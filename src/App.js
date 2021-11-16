@@ -1,9 +1,12 @@
 
 import './App.css';
+
+import ProductCard from './components/templates/cards';
 import { BrowserRouter, Route } from 'react-router-dom';
 import React from 'react';
 import ProductScreen from 'screens/productScreen';
 import HomeScreen from 'screens/HomeScreen';
+
 
 function App() {
   return (

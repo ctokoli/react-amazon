@@ -16,23 +16,24 @@ function ProductScreen(props) {
     );
   }
   return (
+   
     <div>
-      <Link to="/">Back to home</Link>
+
+     <Link to="/"> Go Back </Link>
       <div className="row top">
         <div className="col-2">
-          <img className="large" src={process.env.PUBLIC_URL + '.' + product.image} alt={product.name}></img>
+          <img className="large" src={process.env.PUBLIC_URL + "." + product.image} alt={product.name}></img>
         </div>
         <div className="col-1">
           <ul>
-            <li>{product.name}</li>
-            <li >
-              <div className="rating">
-              <Rating 
-                rating={product.rating}
-                numReviews={product.reviews}
-              ></Rating>
-              </div>
-              
+            <li><h1>{product.name}</h1></li>
+            <li>
+             <div className="rating">
+              <Rating
+                  rating={product.rating}
+                  numReviews={product.reviews}
+                ></Rating>
+             </div>
             </li>
             <li>Price : ${product.price}</li>
             <li>
@@ -54,12 +55,15 @@ function ProductScreen(props) {
                   <div>Status </div>
                   <div>
                     {product.stock > 0 ? (
-                      <span className="success"> In stock</span>
+                      <span className="success"> In Stock</span>
                     ) : (
                       <span className="error">Not Avialable</span>
                     )}
                   </div>
                 </div>
+              </li>
+              <li>
+                <button className="primary block">Add to Cart</button>
               </li>
             </ul>
           </div>
