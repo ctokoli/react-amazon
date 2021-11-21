@@ -9,6 +9,7 @@ function HomeScreen() {
              <div className="row center">
         {data.products.map((product) => (
           <ProductCard
+          key={product._id}
             id={product._id}
             image={product.image}
             name={product.name}

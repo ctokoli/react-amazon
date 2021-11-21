@@ -18,6 +18,7 @@ function ProductScreen(props) {
   return (
    
     <div>
+
      <Link to="/"> Go Back </Link>
       <div className="row top">
         <div className="col-2">

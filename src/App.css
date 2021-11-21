@@ -126,6 +126,10 @@ footer{
   flex: 2 1 50rem;
 }
 
+.row.top{
+  align-items: flex-start;
+}
+
 /* product image */
 img {
   border-radius: 0.5rem;

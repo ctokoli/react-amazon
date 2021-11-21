@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from '../assets/images/p1.jpg';
 import Rating from './star_comp';
 
 class ProductCard extends React.Component{
@@ -7,7 +6,8 @@ class ProductCard extends React.Component{
         return <div>
          <div className='card' key={this.props.id} >
             <a href= {`/product/${this.props.id}`}>
-              <img className="medium" src={process.env.PUBLIC_URL + "." + this.props.image}  alt={this.props.name}/>
+
+              <img className="medium" src={process.env.PUBLIC_URL + this.props.image}  alt={this.props.name}/>
             </a> 
             <div className='card-body'>
               <a href= {`/product/${this.props.id}`} >
