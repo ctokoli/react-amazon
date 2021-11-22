@@ -1,15 +1,25 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import ProductCard from "components/templates/cards";
-import data from "data";
+import axios from 'axios';
 
 
 function HomeScreen() {
-    return ( 
-        <div>
-             <div className="row center">
-        {data.products.map((product) => (
+  const [products, setProducts] = useState([]);
+  
+  useEffect(() => {
+    const fecthData = async () => {
+      const { data } = await axios.get('/api/products'); 
+      setProducts(data);
+    };
+    fecthData(); 
+  }, []);
+
+  return (
+    <div>
+      <div className="row center">
+        {products.map((product) => (
           <ProductCard
-          key={product._id}
+            key={product._id}
             id={product._id}
             image={product.image}
             name={product.name}
@@ -19,8 +29,8 @@ function HomeScreen() {
           />
         ))}
       </div>
-        </div>
-     );
+    </div>
+  );
 }
 
 export default HomeScreen;
