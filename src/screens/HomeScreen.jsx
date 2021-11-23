@@ -10,6 +10,7 @@ function HomeScreen() {
     const fecthData = async () => {
       const { data } = await axios.get('/api/products'); 
       setProducts(data);
+      console.log(data);
     };
     fecthData(); 
   }, []);
