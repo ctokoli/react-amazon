@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import ProductCard from "components/templates/cards";
+import ProductCard from "./components/templates/cards";
 import axios from 'axios';
 
 
@@ -10,6 +10,7 @@ function HomeScreen() {
     const fecthData = async () => {
       const { data } = await axios.get('/api/products'); 
       setProducts(data);
+      console.log(data);
     };
     fecthData(); 
   }, []);

@@ -2,8 +2,8 @@
 import './App.css';
 import { BrowserRouter, Route } from 'react-router-dom';
 import React from 'react';
-import ProductScreen from 'screens/productScreen';
-import HomeScreen from 'screens/HomeScreen';
+import ProductScreen from './screens/productScreen';
+import HomeScreen from './screens/HomeScreen';
 
 
 function App() {
