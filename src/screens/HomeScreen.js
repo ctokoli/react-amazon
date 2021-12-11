@@ -1,23 +1,30 @@
 import React, { useEffect, useState } from 'react';
 import ProductCard from "components/templates/cards";
-import axios from 'axios';
+import LoadingBox from 'components/templates/LoadingBox';
+import MessageBox from 'components/templates/MessageBox';
+import { useSelector, useDispatch } from 'react-redux';
+import { listProducts } from 'actions/productsAction';
 
 
 function HomeScreen() {
-  const [products, setProducts] = useState([]);
+  
+  // @ts-ignore
+  const productList = useSelector((state) => state.productList);
+
+  const dispatch = useDispatch();
+
+  const {loading, error, products} = productList
   
   useEffect(() => {
-    const fecthData = async () => {
-      const { data } = await axios.get('/api/products'); 
-      setProducts(data);
-      console.log(data);
-    };
-    fecthData(); 
-  }, []);
+      dispatch(listProducts());
+  }, [dispatch]);
 
   return (
     <div>
-      <div className="row center">
+    {loading ? <LoadingBox></LoadingBox>
+    : error ? <MessageBox variant="danger">{error}</MessageBox>
+    :
+    <div className="row center">
         {products.map((product) => (
           <ProductCard
             key={product._id}
@@ -30,6 +37,8 @@ function HomeScreen() {
           />
         ))}
       </div>
+    }
+      
     </div>
   );
 }
