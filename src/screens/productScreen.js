@@ -20,7 +20,7 @@ function ProductScreen(props) {
 
   const addToCartHandler = () => {
     //console.log(`${productId}?qty=${qty}`)
-    props.histroy.push(`/cart/${productId}?qty=${qty}`);
+    props.history.push(`/cart/${productId}?qty=${qty}`);
     
   };
 
