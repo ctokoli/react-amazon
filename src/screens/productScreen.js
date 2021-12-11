@@ -1,26 +1,32 @@
+import { detailsProducts } from "actions/productsAction";
+import LoadingBox from "components/templates/LoadingBox";
+import MessageBox from "components/templates/MessageBox";
 import Rating from "components/templates/star_comp";
-import data from "data";
 import React from "react";
-import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 function ProductScreen(props) {
-  const product = data.products.find(
-    (x) => x._id === props.match.params.id
-  );
+  const dispatch = useDispatch();
+  const productId = props.match.params.id;
+  
 
-  if (!product) {
-    return (
-      <div>
-        <h2>Product Not Available</h2>
-      </div>
-    );
-  }
+  // @ts-ignore
+  const productDetails = useSelector((state) => state.productDetail);
+
+  const {error, product, loading} = productDetails;
+
+  useEffect(() => {
+    dispatch(detailsProducts(productId));
+  }, [dispatch, productId]);
+
+  console.log(product);
   return (
-   
+    
     <div>
-
-     <Link to="/"> Go Back </Link>
-      <div className="row top">
+    {loading ? <LoadingBox></LoadingBox>
+    : error ? <MessageBox variant="danger">{error}</MessageBox>
+    : <div className="row top">
         <div className="col-2">
           <img className="large" src={process.env.PUBLIC_URL + "." + product.image} alt={product.name}></img>
         </div>
@@ -69,7 +75,9 @@ function ProductScreen(props) {
           </div>
         </div>
       </div>
-    </div>
+     
+    }
+    </div> 
   );
 }
 
